@@ -56,6 +56,15 @@ const Dashboard = () => {
               Role: {user.role.toUpperCase()}
             </span>
           )}
+          {/* Show only for admin */}
+          {user?.role === "admin" && (
+            <button
+              onClick={() => navigate("/admin")}
+              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition"
+            >
+              Admin Dashboard
+            </button>
+          )}
           <button
             onClick={logout}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
@@ -64,7 +73,6 @@ const Dashboard = () => {
           </button>
         </div>
       </header>
-
       {/* Main Content */}
       <main className="flex-grow flex items-center justify-center px-4">
         <div className="bg-white  rounded-xl shadow-lg p-8 w-full max-w-xl text-center">
@@ -85,18 +93,17 @@ const Dashboard = () => {
           >
             Upload
           </button>
-        
 
           {status && (
             <p className="mt-4 text-green-600 font-medium">{status}</p>
           )}
         </div>
-          <a
-            href="/history"
-            className="mt-6 inline-block text-blue-600 hover:underline font-medium"
-          >
-            View Upload History
-          </a>
+        <a
+          href="/history"
+          className="mt-6 inline-block text-blue-600 hover:underline font-medium"
+        >
+          View Upload History
+        </a>
       </main>
 
       {/* Optional Footer */}
