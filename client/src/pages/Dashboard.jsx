@@ -98,12 +98,14 @@ const Dashboard = () => {
             <p className="mt-4 text-green-600 font-medium">{status}</p>
           )}
         </div>
+        <div>
         <a
           href="/history"
           className="mt-6 inline-block text-blue-600 hover:underline font-medium"
         >
           View Upload History
         </a>
+        </div>
       </main>
 
       {/* Optional Footer */}
